@@ -9,12 +9,18 @@ public class FileUtils {
 
     public static boolean isValidDirectory(String path){
         File file = new File(path);
+        File[] listfile = file.listFiles();
+
         if(!file.exists()){
             return false;
         }
         if(!file.isDirectory()){
             return false;
         }
+        if(listfile.length > 0){
+            return false;
+        }
+
         return true;
     }
 
