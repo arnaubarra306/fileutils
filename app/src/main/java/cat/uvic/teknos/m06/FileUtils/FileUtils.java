@@ -12,10 +12,13 @@ public class FileUtils {
         if(!file.exists()){
             return false;
         }
+        if(!file.isDirectory()){
+            return false;
+        }
         return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(isValidDirectory("C:\\Users\\10028970\\Desktop\\PROVA"));
+        System.out.println(isValidDirectory("C:\\Users\\10028970\\Source\\Repros"));
     }
 }
