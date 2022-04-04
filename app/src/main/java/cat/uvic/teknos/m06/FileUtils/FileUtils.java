@@ -20,6 +20,9 @@ public class FileUtils {
         if(listfile.length > 0){
             return false;
         }
+        if(file.getAbsolutePath().contains(" ")){
+            return false;
+        }
 
         return true;
     }
