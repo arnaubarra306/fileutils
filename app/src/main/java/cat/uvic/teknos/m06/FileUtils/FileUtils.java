@@ -3,12 +3,19 @@
  */
 package cat.uvic.teknos.m06.FileUtils;
 
+import java.io.File;
+
 public class FileUtils {
-    public String getGreeting() {
-        return "Hello World!";
+
+    public static boolean isValidDirectory(String path){
+        File file = new File(path);
+        if(!file.exists()){
+            return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(new FileUtils().getGreeting());
+        System.out.println(isValidDirectory("C:\\Users\\10028970\\Desktop\\PROVA"));
     }
 }
